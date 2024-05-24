@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Average Calculator</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e0e0e0;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #00796b;
+            margin-bottom: 20px;
+        }
+        .table-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        table {
+            margin: 0 10px;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px 20px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f0f8ff;
+        }
+        button {
+            padding: 12px 25px;
+            font-size: 16px;
+            background-color: #00796b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #004d40;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #00796b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Grade Average Calculator</h1>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>Subject</th>
+                </tr>
+                <tr>
+                    <td>Math</td>
+                </tr>
+                <tr>
+                    <td>Filipino</td>
+                </tr>
+                <tr>
+                    <td>Science</td>
+                </tr>
+                <tr>
+                    <td>ESP</td>
+                </tr>
+                <tr>
+                    <td>AP</td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <th>Grade</th>
+                </tr>
+                <tr>
+                    <td id="grade1">90</td>
+                </tr>
+                <tr>
+                    <td id="grade2">85</td>
+                </tr>
+                <tr>
+                    <td id="grade3">92</td>
+                </tr>
+                <tr>
+                    <td id="grade4">93</td>
+                </tr>
+                <tr>
+                    <td id="grade5">85</td>
+                </tr>
+            </table>
+        </div>
+        <button onclick="calculateAverage()">Calculate Average</button>
+        <div id="result"></div>
+    </div>
+    
+    <script>
+        function calculateAverage() {
+            var grade1 = parseFloat(document.getElementById('grade1').innerText);
+            var grade2 = parseFloat(document.getElementById('grade2').innerText);
+            var grade3 = parseFloat(document.getElementById('grade3').innerText);
+            var grade4 = parseFloat(document.getElementById('grade4').innerText);
+            var grade5 = parseFloat(document.getElementById('grade5').innerText);
+
+            var average = (grade1 + grade2 + grade3 + grade4 + grade5) / 5;
+            document.getElementById('result').innerText = "Your average grade is: " + average.toFixed(2);
+        }
+    </script>
+</body>
+</html>
